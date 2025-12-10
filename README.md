@@ -1,5 +1,3 @@
 # Readme
 
 testing
-
-Erika testar
