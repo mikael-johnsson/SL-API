@@ -1,5 +1,9 @@
-import type { SLResponse } from "../types/slTypes";
+import type { JourneyResponse } from "../types/JourneyPlanner/JourneyResponse";
+import type { Journey } from "../types/JourneyPlanner/Journey";
+import type { Leg } from "../types/JourneyPlanner/Leg";
+import type { Place } from "../types/JourneyPlanner/Place";
 import { get } from "./apiService";
+
 
 const BASE_URL = "https://journeyplanner.integration.sl.se/v2/trips";
 
