@@ -1,7 +1,4 @@
 import type { JourneyResponse } from "../models/JourneyPlanner/JourneyResponse";
-import type { Journey } from "../models/JourneyPlanner/Journey";
-import type { Leg } from "../models/JourneyPlanner/Leg";
-import type { Place } from "../models/JourneyPlanner/Place";
 import { get } from "./apiService";
 
 const BASE_URL = "https://journeyplanner.integration.sl.se/v2/trips";
