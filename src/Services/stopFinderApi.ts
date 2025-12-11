@@ -10,6 +10,6 @@ const buildStopUrl = (searchText: string) => {
 export const getStops = async (searchText: string) => {
   const url = buildStopUrl(searchText);
   const data = await get<StopFinderResponse>(url);
-  return response.locations;
+  return data.locations;
 };
 
