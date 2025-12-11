@@ -12,7 +12,7 @@ const buildUrl = (startId: string, destinationId: string, trips: 1 | 2 | 3 = 3) 
 
 export const getTrips = async (startId: string, destinationId: string) => {
   const url = buildUrl(startId, destinationId);
-  const response = await get<JourneyResponse>(url);
+  const data = await get<JourneyResponse>(url);
   return response.journeys;
 };
 
