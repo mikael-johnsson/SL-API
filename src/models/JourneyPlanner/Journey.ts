@@ -1,4 +1,4 @@
-import type { Leg } from "./leg";
+import type { Leg } from "./Leg";
 
 export type Journey = {
   tripDuration: number;

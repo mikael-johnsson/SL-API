@@ -1,4 +1,4 @@
-import type { Journey } from "./journey";
+import type { Journey } from "./JourneyPlanner/Journey";
 
 export const testObject = () => {
   const trip: Journey = {
@@ -55,4 +55,12 @@ export const testingAPIMicke = async () => {
   );
   const data = await response.json();
   console.log(data);
+};
+
+export const testingStopFinderMicke = async () => {
+  const response = await fetch(
+    "https://journeyplanner.integration.sl.se/v2/stop-finder?name_sf=slussen&type_sf=any&any_obj_filter_sf=2"
+  );
+  const data = await response.json();
+  console.log("this is Stop Finder data:", data);
 };
