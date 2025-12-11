@@ -1,5 +1,5 @@
-import type { StopFinderResponse } from "../types/StopFinder/StopFinderResponse";
-import type { StopLocation } from "../types/StopFinder/StopLocation";
+import type { StopFinderResponse } from "../models/StopFinder/StopFinderResponse";
+import type { StopLocation } from "../models/StopFinder/StopFinderLocation";
 import { get } from "./apiService";
 
 const STOP_BASE_URL = "https://journeyplanner.integration.sl.se/v2/stop_finder";
