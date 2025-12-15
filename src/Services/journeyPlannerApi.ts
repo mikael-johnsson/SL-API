@@ -1,5 +1,6 @@
 import type { JourneyResponse } from "../models/JourneyPlanner/JourneyResponse";
 import { get } from "./apiService";
+import { getGeoposition } from "../utils/findGeolocation";
 
 const BASE_URL = "https://journeyplanner.integration.sl.se/v2/trips";
 
@@ -12,4 +13,10 @@ export const getTrips = async (startId: string, destinationId: string) => {
   const data = await get<JourneyResponse>(url);
   return data.journeys;
 };
+
+export const getUserCoordinates = async () => {
+  const coords = await getGeoposition();
+  return coords;
+};
+
 
