@@ -18,5 +18,4 @@ export const handleGeolocation = () => {
       startInput.disabled = false;
     }
   });
-  //
 };
