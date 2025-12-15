@@ -1,3 +1,4 @@
+import { handleSubmit } from "./input";
 import { getStops } from "./Services/stopFinderApi";
 import "./style.css";
 import { getGeoposition } from "./utils/findGeolocation";
@@ -32,3 +33,4 @@ geoPosCheckbox.addEventListener("change", async () => {
   }
 });
 //
+handleSubmit()
