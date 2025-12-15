@@ -2,7 +2,7 @@ import { getStops } from "./Services/stopFinderApi";
 import "./style.css";
 import { getGeoposition } from "./utils/findGeolocation";
 import "./utils/findGeolocation";
-import { handleGeolocation } from "./utils/handleGeolocation";
+import { allowGeolocation } from "./utils/handleGeolocation";
 
 const stops = await getStops("slussen");
 console.log("Här är stoppen man får om man söker på slussen: ", stops);
@@ -13,4 +13,4 @@ if (coords) {
   console.log("här är användarens geoLocation:", coords);
 }
 
-handleGeolocation();
+allowGeolocation();

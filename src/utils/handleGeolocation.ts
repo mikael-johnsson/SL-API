@@ -1,4 +1,4 @@
-export const handleGeolocation = () => {
+export const allowGeolocation = () => {
   //hitta checkboxen
   const geoPosCheckbox = document.getElementById(
     "geopos-checkbox"
