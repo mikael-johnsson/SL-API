@@ -1,4 +1,6 @@
+import { getTrips } from "./Services/journeyPlannerApi";
 import { getStops } from "./Services/stopFinderApi";
+import { createHtml } from "./utils/createHtml";
 
 export const handleSubmit = () => {
   const startInput = document.getElementById("input-start") as HTMLInputElement;
@@ -17,10 +19,10 @@ export const handleSubmit = () => {
     const startStops = await getStops(startValue);
     const endStops = await getStops(endValue);
 
-    console.log("Start:", startValue);
-    console.log("End:", endValue);
+    const startId = startStops[0].id;
+    const endId = endStops[0].id;
 
-    console.log("start-station", startStops);
-    console.log("End-station", endStops);
+    const journeys = await getTrips(startId, endId);
+    createHtml(journeys);
   });
 };
