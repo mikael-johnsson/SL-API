@@ -4,7 +4,7 @@ export const createHtml = (journeys: JourneyResponse) => {
   console.log("Journey Response in createHtmlFunction:", journeys);
 
   const resultDiv = document.getElementById("journey-result");
-  if (!resultDiv) return; // ✅ helt OK här
+  if (!resultDiv) return;
 
   resultDiv.innerHTML = "";
 
