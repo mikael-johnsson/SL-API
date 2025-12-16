@@ -34,7 +34,7 @@ export const createHtml = (response: JourneyResponse) => {
         <div class="leg">
           <p><strong>Från:</strong> ${leg.origin.name}</p>
           <p><strong>Till:</strong> ${leg.destination.name}</p>
-          <p><strong>Färdmedel:</strong> </p>
+          <p><strong>Färdmedel:</strong> ${leg.transportation?.product.name ?? "Okänd"}</p>
           <p><strong>Avgång:</strong> ${departureTime}</p>
           <p><strong>Ankomst:</strong> ${arrivalTime}</p>
           <p><strong>Varaktighet:</strong> ${minutes} min ${seconds} sek</p>
