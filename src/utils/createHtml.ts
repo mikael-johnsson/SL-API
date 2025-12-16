@@ -21,10 +21,22 @@ export const createHtml = (response: JourneyResponse) => {
       const minutes = Math.floor(leg.duration / 60);
       const seconds = leg.duration % 60;
 
+      const formatTime = (isoString?: string) => {
+        if (!isoString) return "Okänd";
+        const date = new Date(isoString);
+        return date.toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" });
+      };
+
+      const departureTime = formatTime(leg.origin.departureTimePlanned);
+      const arrivalTime = formatTime(leg.destination.arrivalTimePlanned);
+
       const html = `
         <div class="leg">
           <p><strong>Från:</strong> ${leg.origin.name}</p>
           <p><strong>Till:</strong> ${leg.destination.name}</p>
+          <p><strong>Färdmedel:</strong> </p>
+          <p><strong>Avgång:</strong> ${departureTime}</p>
+          <p><strong>Ankomst:</strong> ${arrivalTime}</p>
           <p><strong>Varaktighet:</strong> ${minutes} min ${seconds} sek</p>
         </div>
         <hr />
@@ -34,3 +46,4 @@ export const createHtml = (response: JourneyResponse) => {
     });
   });
 };
+
