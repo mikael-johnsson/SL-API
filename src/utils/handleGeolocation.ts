@@ -1,3 +1,6 @@
+/**
+ * disables the origin input field if the geoPosCheckbox is checked
+ */
 export const handleGeolocation = () => {
   //hitta checkboxen
   const geoPosCheckbox = document.getElementById(
@@ -11,10 +14,8 @@ export const handleGeolocation = () => {
   //om användaren vill använda sin platsinfo
   geoPosCheckbox.addEventListener("change", async () => {
     if (geoPosCheckbox.checked) {
-      console.log("User says - use my geoPosition");
       startInput.disabled = true;
     } else {
-      console.log("User says - do not use my geopositon");
       startInput.disabled = false;
     }
   });
