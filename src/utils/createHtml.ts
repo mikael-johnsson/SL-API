@@ -10,6 +10,12 @@ export const createHtml = (response: JourneyResponse) => {
 
   resultDiv.innerHTML = "";
 
+  const formatTime = (isoString?: string) => {
+    if (!isoString) return "Okänd";
+    const date = new Date(isoString);
+    return date.toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" });
+  };
+
   journeys.forEach((trip: Journey, tripIndex: number) => {
     const totalMinutes = Math.round(trip.tripDuration / 60);
     resultDiv.insertAdjacentHTML(
@@ -20,12 +26,6 @@ export const createHtml = (response: JourneyResponse) => {
     trip.legs.forEach((leg: Leg, legIndex: number) => {
       const minutes = Math.floor(leg.duration / 60);
       const seconds = leg.duration % 60;
-
-      const formatTime = (isoString?: string) => {
-        if (!isoString) return "Okänd";
-        const date = new Date(isoString);
-        return date.toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" });
-      };
 
       const departureTime = formatTime(leg.origin.departureTimePlanned);
       const arrivalTime = formatTime(leg.destination.arrivalTimePlanned);
