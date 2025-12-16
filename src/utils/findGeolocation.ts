@@ -1,10 +1,13 @@
 import { collectData } from "../Services/journeyPlannerApi";
 
+/**
+ *
+ * @param destinationId the ID of the destination
+ * the user entered in the input earlier
+ * used here only to pass along to collectData
+ */
 export const getGeoLocation = (destinationId: string) => {
   navigator.geolocation.getCurrentPosition((pos) => {
-    console.log("this is users position: ", pos.coords);
     collectData(pos.coords, destinationId);
   });
 };
-
-// add a call to this function on button click, with parameter endId
