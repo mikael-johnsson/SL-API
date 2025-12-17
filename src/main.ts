@@ -10,3 +10,8 @@ handleSubmit()
 const inputElement = document.querySelector("input") as HTMLInputElement;
 autocomleteInput(inputElement, "", [])
 
+import { handleGeolocation } from "./utils/handleGeolocation";
+import "./style.css";
+
+handleGeolocation();
+handleSubmit();
