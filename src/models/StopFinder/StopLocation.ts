@@ -4,4 +4,5 @@ export type StopLocation = {
   isBest: boolean;
   name: string;
   type: string;
+  disassembledName: string;
 };

@@ -1,6 +1,7 @@
 import type { JourneyResponse } from "../models/JourneyPlanner/JourneyResponse";
 import type { Journey } from "../models/JourneyPlanner/Journey";
 import type { Leg } from "../models/JourneyPlanner/Leg";
+import type { StopLocation } from "../models/StopFinder/StopLocation";
 
 export const createHtml = (response: JourneyResponse) => {
   const journeys = response.journeys;
@@ -49,5 +50,44 @@ export const createHtml = (response: JourneyResponse) => {
 
       resultDiv.insertAdjacentHTML("beforeend", html);
     });
+  });
+};
+
+export const createSearchSuggestions = (
+  locations: StopLocation[],
+  type: string
+) => {
+  let searchSuggestionList: HTMLElement | null;
+
+  if (type === "origin") {
+    searchSuggestionList = document.getElementById("search-origin-list");
+  } else {
+    searchSuggestionList = document.getElementById("search-destination-list");
+  }
+  if (searchSuggestionList) {
+    searchSuggestionList.innerHTML = "";
+  }
+
+  console.log(searchSuggestionList);
+
+  locations.forEach((loc) => {
+    const locationEl = document.createElement("li");
+    locationEl.innerHTML = loc.disassembledName
+      ? loc.disassembledName
+      : loc.name;
+    locationEl.addEventListener("click", () => {
+      if (type === "origin") {
+        (document.getElementById("input-start") as HTMLInputElement).value =
+          locationEl.innerHTML;
+      } else {
+        (document.getElementById("input-end") as HTMLInputElement).value =
+          locationEl.innerHTML;
+      }
+
+      if (searchSuggestionList) {
+        searchSuggestionList.innerHTML = "";
+      }
+    });
+    searchSuggestionList?.appendChild(locationEl);
   });
 };
