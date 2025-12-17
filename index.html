@@ -7,11 +7,18 @@
     <title>sl-api</title>
   </head>
   <body>
-    <div id="app">
-      <input id="input-start" type="text" placeholder="varifrån åker du?" />
-      <input id="input-end" type="text" placeholder="var vill du åka?" />
+    <div id="app" class="form">
+      <label for="geopos-checkbox">Vill du använda din platsinfo?</label>
+      <input type="checkbox" id="geopos-checkbox" />
+      <input id="input-start" type="text" placeholder="varifrån åker du?" autocomplete="off" />
+      <input id="input-end" type="text" placeholder="var vill du åka?" autocomplete="off" />
       <button id="btn-input">Hitta resa</button>
     </div>
+
+    <ul id="start-suggestion" class="suggestion"></ul>
+     <ul id="end-suggestion" class="suggestion"></ul>
+
+    <div id="journey-result"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
