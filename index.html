@@ -8,16 +8,24 @@
   </head>
   <body>
     <div id="app" class="form">
-      <label for="geopos-checkbox">Vill du använda din platsinfo?</label>
-      <input type="checkbox" id="geopos-checkbox" />
-      <input id="input-start" type="text" placeholder="varifrån åker du?" />
-      <div class="list-container">
-        <ul id="search-origin-list"></ul>
+      <label for="geopos-checkbox"
+        >Vill du använda din platsinfo?
+        <input type="checkbox" id="geopos-checkbox"
+      /></label>
+      <div class="input-container">
+        <input id="input-start" type="text" placeholder="varifrån åker du?" />
+        <div class="list-container">
+          <ul id="search-origin-list"></ul>
+        </div>
       </div>
-      <input id="input-end" type="text" placeholder="var vill du åka?" />
-      <div class="list-container">
-        <ul id="search-destination-list"></ul>
+
+      <div class="input-container">
+        <input id="input-end" type="text" placeholder="var vill du åka?" />
+        <div class="list-container">
+          <ul id="search-destination-list"></ul>
+        </div>
       </div>
+
       <button id="btn-input">Hitta resa</button>
     </div>
     <div id="journey-result"></div>
