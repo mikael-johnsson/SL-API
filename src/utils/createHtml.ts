@@ -53,6 +53,12 @@ export const createHtml = (response: JourneyResponse) => {
   });
 };
 
+/**
+ *
+ * @param locations list of StopLoctions
+ * @param type a string that determines if the locations are
+ * from the origin or destination input field
+ */
 export const createSearchSuggestions = (
   locations: StopLocation[],
   type: string
